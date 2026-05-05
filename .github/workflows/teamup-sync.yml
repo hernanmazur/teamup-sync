@@ -2,7 +2,7 @@ name: Descargar ICS Teamup
 
 on:
   schedule:
-    - cron: '50 8 * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
