@@ -1,18 +1,15 @@
 name: Descargar ICS Teamup V2
-
 on:
   schedule:
     - cron: "*/5 * * * *"
-
 jobs:
   download:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write  # Mejora: permisos explícitos
     steps:
       - uses: actions/checkout@v4
-
       - run: curl -L "https://ics.teamup.com/feed/ksdib8z2y3ig3osyxy/11443673.ics" -o teamup.ics
-
       - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
