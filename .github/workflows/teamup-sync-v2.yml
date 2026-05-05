@@ -10,14 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Descargar ICS
-        run: curl -L "https://ics.teamup.com/feed/ksdib8z2y3ig3osyxy/11443673.ics" -o teamup.ics
+      - run: curl -L "https://ics.teamup.com/feed/ksdib8z2y3ig3osyxy/11443673.ics" -o teamup.ics
 
-      - name: Commit y push si cambió
-        run: |
+      - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add teamup.ics
